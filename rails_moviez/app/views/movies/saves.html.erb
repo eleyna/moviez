@@ -1,0 +1,5 @@
+<ul>
+<% @saves.each do |save| %>
+  <li><%= link_to save.title, movies_path(save) %></li>
+<% end %>
+</ul>

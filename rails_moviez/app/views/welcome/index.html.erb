@@ -1,0 +1,9 @@
+<%= link_to 'Faves', faves_path %> |
+<%= link_to 'Saves', saves_path %>
+
+<h1>Search for a movie:</h1>
+
+<form action="/movies/index" method="get">
+  <input type="text" name="title">
+  <button>Submit</button>
+</form>

@@ -1,0 +1,16 @@
+Title: <%= @movie_info.title %></br>
+Year: <%= @movie_info.year %></br>
+Plot: <%= @movie_info.plot %></br>
+MPAA Rating: <%= @movie_info.mpaa_rating %></br>
+
+<form action="/movies" method="POST">
+  <input type="hidden" name="id" value="<%= @id %>">
+  <input type="hidden" name="savefave" value="save">
+  <button>Save Movie</button>
+</form>
+
+<form action="/movies" method="POST">
+  <input type="hidden" name="id" value="<%= @id %>">
+  <input type="hidden" name="savefave" value="fave">
+  <button>Fave Movie</button>
+</form>
