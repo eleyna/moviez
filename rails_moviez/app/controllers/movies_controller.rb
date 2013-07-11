@@ -30,7 +30,7 @@ class MoviesController < ActionController::Base
   end
 
   def faves
-    @faves = Movie.where(rating: 100)
+    @faves = Movie.where(rating: 1003)
   end
 
 end

@@ -1,3 +1,15 @@
+Where am I now:
+- I can save and fave a movie to the database
+- have not been working on it this morning since
+I've been helping Ben
+- think I know how to do it, just haven't gotten there yet
+
+
+
+
+
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
