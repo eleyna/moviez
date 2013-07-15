@@ -20,6 +20,11 @@ class MoviesController < ActionController::Base
     movie.plot = movie_data.plot
     movie.mpaa_rating = movie_data.mpaa_rating
 
+    movie_data.cast_members[0..2].each do |actor|
+      cast_member =  Actor.find_or_create_by_name(actor)
+      movie.actors << cast_member
+    end
+
     if params[:savefave] == "fave"
       movie.rating = 100
     end
@@ -45,6 +50,10 @@ class MoviesController < ActionController::Base
     movie.save
 
     redirect_to "/movies/saves_faves/#{params[:id]}"
+  end
+
+  def show_actors
+    @actors = Actor.all
   end
 
 end

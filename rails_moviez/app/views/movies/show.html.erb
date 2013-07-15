@@ -1,13 +1,13 @@
 <%= render 'movie_details' %>
 
 <form action="/movies" method="POST">
-  <input type="hidden" name="id" value="<%= @id %>">
+  <input type="hidden" name="id" value="<%= @movie_info.id %>">
   <input type="hidden" name="savefave" value="save">
   <button>Save Movie</button>
 </form>
 
 <form action="/movies" method="POST">
-  <input type="hidden" name="id" value="<%= @id %>">
+  <input type="hidden" name="id" value="<%= @movie_info.id %>">
   <input type="hidden" name="savefave" value="fave">
   <button>Fave Movie</button>
 </form>

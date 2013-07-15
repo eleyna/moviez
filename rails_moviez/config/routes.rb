@@ -6,4 +6,5 @@ RailsMoviez::Application.routes.draw do
   post '/movies/update/:id' => 'movies#update_movie', as: 'update_movie'
   get '/movies/saves_faves/:id' => 'movies#show_faves_saves', as: 'movies_faves_saves'
   get '/movies/:id' => 'movies#show', as: 'movies'
+  get '/actors' => 'movies#show_actors', as: 'actors'
 end
