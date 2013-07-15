@@ -1,6 +1,5 @@
 <ul>
 <% @movies.each do |movie| %>
-  <li><%= link_to movie.title, movies_path(movie) %></li>
   <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
 <% end %>
 </ul>

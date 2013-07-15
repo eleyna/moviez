@@ -5,8 +5,11 @@ class MoviesController < ActionController::Base
   end
 
   def show
-    @id = params[:id]
-    @movie_info = Imdb::Movie.new(@id)
+    @movie_info = Imdb::Movie.new(params[:id])
+  end
+
+  def show_faves_saves
+    @movie_info = Movie.find(params[:id])
   end
 
   def create
@@ -25,12 +28,23 @@ class MoviesController < ActionController::Base
     redirect_to '/'
   end
 
-  def saves
-    @saves = Movie.all
+  def faves_saves
+    if params[:fave_save] == "fave"
+      @faves_saves = Movie.where(rating: 100)
+    else
+      @faves_saves = Movie.all
+    end
   end
 
-  def faves
-    @faves = Movie.where(rating: 1003)
+  def update_movie
+    movie = Movie.find(params[:id])
+
+    movie.rating += 1 if params[:rate] == "up"
+    movie.rating -= 1 if params[:rate] == "down"
+
+    movie.save
+
+    redirect_to "/movies/saves_faves/#{params[:id]}"
   end
 
 end

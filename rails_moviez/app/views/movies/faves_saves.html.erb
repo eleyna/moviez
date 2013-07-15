@@ -1,0 +1,6 @@
+<ul>
+<% @faves_saves.each do |fave_save| %>
+  <li><%= link_to fave_save.title, movies_faves_saves_path(fave_save) %></li>
+<% end %>
+</ul
+

@@ -1,7 +1,4 @@
-Title: <%= @movie_info.title %></br>
-Year: <%= @movie_info.year %></br>
-Plot: <%= @movie_info.plot %></br>
-MPAA Rating: <%= @movie_info.mpaa_rating %></br>
+<%= render 'movie_details' %>
 
 <form action="/movies" method="POST">
   <input type="hidden" name="id" value="<%= @id %>">
